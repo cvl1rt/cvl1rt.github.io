@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            background-color: rgb(198, 214, 198);
+            padding: 30px;
+            width:300px;
+            border-radius: 12%;
+            margin:50px auto;
+            text-align: center;
+
+        }
+        h1{
+            color: rgb(58, 68, 61);
+        }
+        .content-number{
+            padding: 20px;
+        }
+        .number{
+            margin:5px;
+            font-size: 13px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>猜數字</h1>
+        <h3 class="range">請輸入數字</h3>
+        <div class="enter">
+            <input class="input" type="text">
+        </div>
+        <div class="content-number">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <br>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <br>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <br>
+            <button class="number">0</button>
+            <br>
+            <button class="confirm">Enter</button>
+            <button class="clear">clear</button>
+            <button class="reset">reset</button>
+        </div>
+    </div>
+    <script>
+        //宣告
+        let randow = 0
+        let min = 1
+        let max = 100
+        //Dom
+        const range = document.querySelector('.range')
+        const confirm = document.querySelector('.confirm')
+        const number = document.querySelectorAll('.number')
+        const clear = document.querySelector('.clear')
+        const reset = document.querySelector('.reset')
+        const input = document.querySelector('.input')
+        //方法
+        function getrandow() {
+            return Math.floor(Math.random() * (100 - 1) + 1);
+        }
+        function confirmBtn() {
+            let win = false
+            let output = input.value
+            if (output < min || output > max)
+                return alert('不再範圍內')
+            if (output > randow) {
+                max = output
+            }
+            else if (output < randow) {
+                min = output
+            }
+            else if (output == randow) {
+                win = true
+            }
+            isWin(win)
+        }
+        function isWin(win) {
+            if (!win) {
+                range.innerText = `輸入${min}~${max}的整數`
+            }
+            else {
+                range.innerText = '猜中了!!!'
+            }
+        }
+        //window.onload
+        window.onload = function () {
+            randow = getrandow()
+            console.dir(randow)
+
+            reset.onclick = function () {
+                window.location.reload()
+            }
+            clear.onclick = function () {
+                input.value = ''
+            }
+            confirm.onclick = function () {
+                confirmBtn()
+                input.value = ''
+            }
+            number.forEach(x => {
+                x.onclick = function () {
+                    input.value += x.innerText
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
