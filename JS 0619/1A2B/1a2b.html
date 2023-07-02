@@ -4,138 +4,123 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>1A2B</title>
-    <style>
-       .container{
-        border: 1px solid rgb(50, 74, 51);
-        border-radius: 20px;
-        
-        background-color: rgb(222, 234, 222);
-            padding: 30px;
-            width:300px;
-            border-radius: 14%;
-            margin:50px auto;
-            text-align: center;
-       }
-    </style>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.main{
+    border: 1px solid black;
+    box-shadow: 20px 20px 20px rgb(178, 186, 178);
+    width: 450px;
+    text-align: center;
+}
+.main .title{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px;
+}
+.main .input {
+    margin-bottom: 20px;
+    position: relative;
+    justify-content: space-between;
+}
+.main .input input{
+    border: 1px solid black;
+    width: 200px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+.main .input .btn-clear{
+    background-color: white;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding:  0 5px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.main .screen{
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    margin: auto;
+}
+.main .buttons{
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    margin: 30px auto;
+    justify-content: space-between;
+
+}
+.main .buttons .btn{
+    background-color: white;
+    width: 40px;
+    font-size: 20px;
+    margin: 10px;
+}
+.main .buttons .btn-press{
+    width: fit-content;
+    padding: 0 25px;
+}
+.main .btn-other{
+    width: 80%;
+}
+.main .btn-other .btn{
+    width: fit-content;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+  </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 bg-warning pt-2">
-                <h2 class="text-center">1A2B</h2>
-            </div>
+    <div class="main">
+        <section class="title">1A2B GAME</section>
+        <div class="input">
+            <input type="text" placeholder="">
+            
         </div>
-
-        <div class="row">
-            <div class="col mt-2">
-                <button type="button" class="btn btn-secondary" id="btn_start">Start</button>
-                <button type="button" class="btn btn-success" id="btn_answer">Answer</button>
-                <button type="button" class="btn btn-danger" id="btn_renew">Restart</button>
-            </div>
-        </div>
-        <br/>
-
-        <h3>輸入四位數字(四個數不重複)</h3>
-        <input class="form-control" type="text" id="input_answer">
-        <button type="button" class="btn btn-primary mt-2" id="btn_checkanswer">Check</button>
-        <br/>
-
-        <ul class="list-group mt-2" id="show_answer">
-        </ul>
-
+        <section class="screen"></section>
+        <section class="buttons">
+            <button class="btn btn-num">1</button>
+            <button class="btn btn-num">2</button>
+            <button class="btn btn-num">3</button>
+            <button class="btn btn-num">4</button>
+            <button class="btn btn-num">5</button>
+            <button class="btn btn-num">6</button>
+            <button class="btn btn-num">7</button>
+            <button class="btn btn-num">8</button>
+            <button class="btn btn-num">9</button>
+            <button class="btn btn-num">0 </button>
+            <button class="btn btn-press">Enter</button>
+        </section>
+        <section class="buttons btn-other">
+            <button class="btn btn-start">Start</button>
+            <button class="btn btn-clear">Clear</button>
+            <button class="btn btn-answer">Answer</button>
+            <button class="btn btn-restart">Restart</button>
+            
+          
+        </section>
     </div>
 
-    <script>
-        var Answer;
-        var NumberRnd = [];
-
-        document.getElementById("btn_answer").disabled = true;
-        document.getElementById("btn_renew").disabled = true;
-        document.getElementById("btn_checkanswer").disabled = true;
-        document.getElementById("input_answer").disabled = true;
-
-
-        var cmdStart = document.getElementById("btn_start");//遊戲開始
-        cmdStart.onclick = function () {
-            document.getElementById("btn_answer").disabled = false;
-            document.getElementById("btn_renew").disabled = false;
-            document.getElementById("btn_checkanswer").disabled = false;
-            document.getElementById("input_answer").disabled = false;
-
-            for (var i = 0; i < 4; i++) {
-                NumberRnd[i] = Math.floor(Math.random() * 10);;
-                for (var j = 0; j < i; j++) {
-                    if (NumberRnd[i] == NumberRnd[j]) {
-                        i--;
-                        break;
-                    }
-                }
-            }
-            Answer = NumberRnd;
-        }
-
-        var cmdAnswer = document.getElementById("btn_answer");//看答案
-        cmdAnswer.onclick = function () {
-            document.getElementById("btn_start").disabled = true;
-            console.log("答案是：" + Answer);
-        }
-
-        var cmdRenew = document.getElementById("btn_renew");//放棄
-        cmdRenew.onclick = function () {
-            window.location.reload();
-        }
-
-        var cmdCheckanswer = document.getElementById("btn_checkanswer");//檢查
-        cmdCheckanswer.onclick = function () {
-            document.getElementById("btn_start").disabled = true;
-
-
-            if (document.getElementById("input_answer").value.length == 4) {
-                var Dictionary = new Array();
-                var A = 0, B = 0;
-                var getInput = document.getElementById("input_answer").value;//取整數
-                var Thousand = Math.floor(getInput / 1000);
-                var Hundred = Math.floor((getInput % 1000) / 100);
-                var Ten = Math.floor((getInput % 100) / 10);
-                var Bit = Math.floor(getInput % 10);
-                Dictionary[0] = Thousand;
-                Dictionary[1] = Hundred;
-                Dictionary[2] = Ten;
-                Dictionary[3] = Bit;
-
-                var ul = document.querySelector("#show_answer");
-                for (var i = 0; i < 4; i++) {
-                    if (NumberRnd[i] == Dictionary[i]) {
-                        A++;
-                        if (A == 4) {
-                            console.log("WIN");
-                        }
-                    }
-                    else {
-                        for (var j = 0; j < 4; j++) {
-                            if (NumberRnd[i] == Dictionary[j]) {
-                                B++;
-                            }
-                        }
-                    }
-                }
-                var li = document.createElement("li");
-                li.className="list-group-item d-flex justify-content-between align-items-center hover";
-                li.innerText = document.getElementById("input_answer").value;
-                var span = document.createElement("span");
-                span.className="badge badge-secondary badge-pill text_size";
-                span.innerText = A + "A" + B + "B";
-                li.appendChild(span);
-                ul.appendChild(li);
-            }
-            else {
-                alert("請輸入四位數(不重複)");
-            }
-        }
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
