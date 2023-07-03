@@ -1,0 +1,115 @@
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: rgba(206, 217, 206, 0.249);
+}
+.calendar{
+    width:500px;
+    height:500px;
+    background-color: rgba(26, 63, 26, 0.588);
+    border-radius: 30px;
+    padding:20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-header{
+    text-align: center;
+    font-size: 25px;
+    color:rgb(235, 230, 230);
+    padding:10px;
+}
+
+.month-picker{
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.year-picker{
+    display: flex;
+    text-align: center;
+}
+
+.year-change{
+    width:200px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin:0 10px;
+    cursor: pointer;
+}
+
+.calendar-week-day{
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    font-weight: 600;
+}
+
+.calendar-week-day div{
+    display: grid;
+    place-items: center;
+    color: rgb(233, 227, 227);
+}
+
+.calendar-days{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap:2px;
+    font-size:25px;
+    color: rgb(236, 227, 227);
+}
+
+.calendar-days div{
+    width:50px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:8px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    border-radius: 50%;
+
+}
+.calendar-days div:hover span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(224, 224, 210);
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: rgb(190, 195, 200);
+    color: rgb(54, 32, 121);
+    border-radius: 50%;
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    font-size: 25px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    transform: scale(1.5);
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
