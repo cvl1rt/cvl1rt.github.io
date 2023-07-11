@@ -1,54 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <!-- css連結 -->
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+
+    </style>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-    <div class="calendar">
-        <div class="calendar-header">
-            <!-- 年 -->
-            <div class="year-picker">
-                <span class="year-change" id="prev-year">
-                    <pre><</pre>
-                </span>
-                <span id="year">2023</span>
-                <span class="year-change" id="next-year">
-                    <pre>></pre>
-                </span>
-            </div>
-            
-            <!-- 月 -->
-            <span class="month-picker"id="month-picker">February</span>
+    <div class="container">
+        <h1>Calendar</h1>
+        <div class="row justify-content-between p-3">
+            <button id="back" class="col-2 btn btn"><</button>
+            <h2 id="yearMonth" class="col-2 text-center">July 2023</h2>
+            <button id="next" class="col-2 btn btn">></button>
         </div>
-
-        <div class="calendar-body">
-            <!-- 日 -->
-            <!-- 星期 -->
-            <div class="calendar-week-day">
-                <div>日</div>
-                <div>一</div>
-                <div>二</div>
-                <div>三</div>
-                <div>四</div>
-                <div>五</div>
-                <div>六</div>
-            </div>
-            <!-- 日期 -->
-            <div class="calendar-days"></div>
+        
+        
+        <div class="weekdays row">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
         </div>
-
-        <div class="month-list"></div>
-
-
-
+        <div id="calendar" class="calendar row">
+        </div>
     </div>
-    <!-- js連結 -->
-    <script src="script.js"></script>
-   
+
+    <!-- Modal -->
+    <div class="modal fade" id="recordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>My Plan</p>
+                    <input class="w-100 rounded-3" type="text">
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    <button type="button" id="saveBtn" class="btn btn" data-bs-dismiss="modal">Save</button>
+                    <button type="button" id="reviseBtn" class="d-none btn btn"
+                        >Revise</button>
+                    <button type="button" id="deleteBtn" class="d-none btn btn"
+                        data-bs-dismiss="modal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script>
+        let recording = [];
+        let kkk = -1;
+        let ppp = '';
+        let spaceDiv = -1;
+        let currentData;
+        let RecordArr = [];
+
+        if (JSON.parse(localStorage.getItem('calenderRe'))) {
+            RecordArr = JSON.parse(localStorage.getItem('calenderRe'));
+        } 
+        // else {
+        //     RecordArr = [];
+        // }
+
+        // RecordArr = JSON.parse(localStorage.getItem('calenderRe'));
+        console.log(RecordArr);
+
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        window.onload = function () {
+            let back = document.querySelector('#back');
+            let next = document.querySelector('#next');
+            let btnSave = document.querySelector('#saveBtn');
+            let btnRevise = document.querySelector('#reviseBtn');
+            let btnDelete = document.querySelector('#deleteBtn');
+            let currentDay = new Date();
+            console.log(currentDay);
+            let Arr = getDayss(currentDay);
+            console.log(Arr);
+
+
+
+            let calendar = document.querySelector('#calendar');
+
+            switchCalendar(Arr);
+
+            next.addEventListener("click", () => {
+                currentDay.setMonth(currentDay.getMonth() + 1);
+                console.log(currentDay);
+                Arr = getDayss(currentDay);
+                switchCalendar(Arr);
+            })
+
+            back.addEventListener("click", () => {
+                currentDay.setMonth(currentDay.getMonth() - 1);
+                console.log(currentDay);
+                Arr = getDayss(currentDay);
+                switchCalendar(Arr);
+            })
+
+            btnDelete.addEventListener('click', () => {
+                let modal = document.querySelector("#recordModal");
+                let text = modal.querySelector('input').value;
+                let divs = document.querySelectorAll('.calendar>div');
+                console.log(currentData);
+                RecordArr.forEach((item, idx) => {
+                    if (item.data == currentData) {
+                        console.log(currentData);
+                        divs[spaceDiv].innerHTML = `${kkk}`;
+                        RecordArr.splice(idx, 1);
+                        let arrayToString = JSON.stringify(RecordArr);
+                        localStorage.setItem('calenderRe', arrayToString);
+                    }
+                })
+                modal.querySelector('input').value = '';
+            })
+
+            btnSave.addEventListener('click', () => {
+
+                let modal = document.querySelector("#recordModal");
+                let text = modal.querySelector('input').value;
+                let divs = document.querySelectorAll('.calendar>div');
+
+                if (text != '') {
+
+                    RecordArr.forEach((item, idx) => {
+                        if (item.data == currentData) {
+                            RecordArr.splice(idx, 1);
+                            divs[spaceDiv].innerHTML = `${kkk}`;
+                        }
+                    })
+                    let upload = { data: `${Arr.year}/${Arr.month + 1}/${kkk}`, text: text };
+                    RecordArr.push(upload);
+                    let arrayToString = JSON.stringify(RecordArr);
+                    localStorage.setItem('calenderRe', arrayToString);
+                    console.log(spaceDiv);
+                    divs[spaceDiv].innerHTML += `<p class="note">${text}</p>`;
+                }
+                console.log(RecordArr);
+            })
+
+            btnRevise.addEventListener('click', () => {
+
+                let modal = document.querySelector("#recordModal");
+                modal.querySelector('input').removeAttribute("disabled",'');
+                btnSave.classList.remove("d-none");
+                btnRevise.classList.add("d-none");
+                
+            })
+        }
+
+        function getDayss(day) {
+            let years = day.getFullYear();
+            let months = day.getMonth();
+            let week1 = getDayOfweek(years, months);
+            let day1 = getDaysOfMonth(years, months + 1);
+            return { year: years, month: months, dayOfWeek: week1, dayOfMonth: day1 };
+        }
+
+        function getDayOfweek(year, month) {
+            var day = new Date(year, month, 1);
+            var weekday = day.getDay();
+            return weekday;
+        }
+
+        function getDaysOfMonth(year, month) {
+            var day0 = new Date(year, month, 0);
+            var daysOfMonth = day0.getDate();
+            return daysOfMonth;
+        }
+
+        function switchCalendar(Arr) {
+            let yearMonth = document.querySelector('#yearMonth');
+            let month = monthNames[Arr.month];
+            yearMonth.innerText = `${month} ${Arr.year}`;
+
+
+
+            let modal = document.querySelector("#recordModal");
+            let btnS = modal.querySelector('#saveBtn');
+            let btnRe = modal.querySelector('#reviseBtn');
+            let btnDe = modal.querySelector('#deleteBtn');
+
+            calendar.innerHTML = '';
+            for (let i = 0; i < Arr.dayOfWeek; i++) {
+                let div = document.createElement('div');
+                calendar.append(div);
+            }
+            for (let i = 0; i < Arr.dayOfMonth; i++) {
+                let div = document.createElement('div');
+                div.classList.add('current');
+                div.innerHTML = `${i + 1}`;
+                let thisData = `${Arr.year}/${Arr.month + 1}/${i + 1}`;
+                // console.log(currentData);
+                RecordArr.forEach(i => {
+                    if (i.data == thisData) {
+                        div.innerHTML += `<p class="note">${i.text}</p>`;
+                    }
+                });
+                div.setAttribute("data-bs-toggle", "modal");
+                div.setAttribute("data-bs-target", "#recordModal");
+
+                div.addEventListener("click", () => {
+                    console.log(div);
+                    modal.querySelector('h5').innerText = `${month} ${i + 1}`;
+                    kkk = i + 1;
+                    spaceDiv = Arr.dayOfWeek + i;
+                    currentData = `${Arr.year}/${Arr.month + 1}/${i + 1}`;
+
+                    console.log(div.querySelector('p'));
+                    ppp = '';
+
+                    if (div.querySelector('p')) {
+                        ppp = div.querySelector('p').innerHTML;
+                        modal.querySelector('input').value = ppp;
+                        modal.querySelector('input').setAttribute("disabled", "");
+
+                        btnS.classList.add('d-none');
+                        btnDe.classList.remove('d-none');
+                        btnRe.classList.remove('d-none');
+                    } else {
+                        modal.querySelector('input').value = ppp;
+                        modal.querySelector('input').removeAttribute("disabled");
+                        btnS.classList.remove('d-none');
+                        btnDe.classList.add('d-none');
+                        btnRe.classList.add('d-none');
+                    }
+
+
+                })
+                calendar.append(div);
+            }
+
+        }
+
+    </script>
 </body>
+
 </html>
