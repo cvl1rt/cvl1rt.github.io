@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .txt {
+            width: 300px;
+        }
+
+        .add {
+            margin-left: 10px;
+        }
+
+        .todo-list li{
+            display: block;
+            margin-bottom: 10px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" placeholder="to do..." class="txt" />
+            <input type="button" class="add" value="add" />
+        </div>
+        <ul class="todo-list"></ul>
+    </div>
+
+    <script>
+        const txt = document.querySelector(".txt");
+        const add = document.querySelector(".add");
+        const list = document.querySelector(".todo-list");
+        let data = [];
+        let isEditing = false; //是否在編輯模式
+        let editIndex = -1; //正在編輯的待辦事項索引
+
+        function initData() {
+            let str = "";
+            data.forEach(function (item, index) {
+                if (index === editIndex) {
+                    //在編輯模式時顯示編輯框和保存按鈕
+                    str += `<li>
+                                <input type="checkbox" class="checkbox" data-num=${index} ${item.completed ? 'checked' : ''}>
+                                <input type="text" class="edit-txt" value="${item.content}" />
+                                <input class="save" type="button" data-num=${index} value="save">
+                                <input class="delete" type="button" data-num=${index} value="delete">
+                            </li>`;
+                } else {
+                    //或是顯示待辦事項內容跟編輯按鈕
+                    str += `<li>
+                                <input type="checkbox" class="checkbox" data-num=${index} ${item.completed ? 'checked' : ''}>
+                                ${item.content}
+                                <input class="edit" type="button" data-num=${index} value="edit">
+                                <input class="delete" type="button" data-num=${index} value="delete">
+                            </li>`;
+                }
+            });
+
+            document.querySelector(".todo-list").innerHTML = str;
+        }
+
+        function clearEditState() {
+            isEditing = false;
+            editIndex = -1;
+        }
+
+        function addOrUpdateTodo() {
+            const todo = txt.value;
+            if (todo === "") {
+                alert("please input your schedule");
+                return;
+            }
+
+            if (isEditing) {
+                data[editIndex].content = todo; //更新待辦的內容
+            } else {
+                data.push({ content: todo, completed: false }); //添加新的待辦事項
+            }
+            
+            txt.value = "";
+            clearEditState();
+            initData();
+        }
+
+        // 新增或更新待辦監聽
+        add.addEventListener("click", function (e) {
+            addOrUpdateTodo();
+        });
+
+        // 刪除或編輯待辦監聽
+        list.addEventListener("click", function (e) {
+            if (e.target.className === "delete") {
+                data.splice(e.target.dataset.num, 1);
+                initData();
+            } else if (e.target.className === "edit") {
+                isEditing = true;
+                editIndex = parseInt(e.target.dataset.num);
+                initData();
+            } else if (e.target.className === "save") {
+                const editTxt = document.querySelector(".edit-txt");
+                const todo = editTxt.value;
+                if (todo === "") {
+                    alert("please input your schedule");
+                    return;
+                }
+                data[editIndex].content = todo; //將編輯框中的內容更新到數據中
+                clearEditState();
+                initData();
+            } else if (e.target.className === "checkbox") {
+                const index = parseInt(e.target.dataset.num);
+                data[index].completed = e.target.checked; //更新待辦事項的完成狀態
+                initData();
+            }
+        });
+    </script>
+</body>
