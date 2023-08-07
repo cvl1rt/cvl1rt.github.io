@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="mainpage">
+            <div class="container">
+                <a href="#" class="main contain">跳到主要內容</a>
+                <header class="header">
+                    <!-- 最上面的選單 -->
+                    <div class="selections">
+                        <button class="function" type="button">商務版</button>
+                        <div class="selection">
+                            <button class="function choose" type="button">行動版</button>
+                        </div>
+                        <button class="function" type="button">常見問答</button>
+                        <div class="language">
+                            <div class="selection">
+                                <button class="function choose" type="button">ZH</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- logo/地區/選擇/登入/搜尋 -->
+                    <div class="titlelist">
+                        <div class="title">
+                            <a class="titlelogo" href="#">
+                                <img src="//cdn.otstatic.com/cfe/14/images/opentable-logo-153e80.svg"
+                                    alt="OpenTableLogo" class="logo" />
+                            </a>
+                            <div class="title box">
+                                <nav class="navigation">
+                                    <div class="loadingBlock location"></div>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="title box">
+                            <div class="login">
+                                <button type="button" class="loginbutton">登入</button>
+                            </div>
+                            <div class="searchplace">
+                                <button type="button" class="searchbutton"></button>
+                            </div>
+                            <div class="Hamburgerlist">
+                                <button type="button" class="mobilemenu">
+                                    <span class="ic" data-test="icHamburger" data-testid="icHamburger">
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ol class="landmark">
+                        <li class="placeselect">
+                            <a href="#" class="district">首頁</a>
+                        </li>
+                        <li class="placeselect">
+                            <div class="country">台灣</div>
+                        </li>
+                        <li class="placeselect">
+                            <a href="#" class="district">大臺北地區</a>
+                        </li>
+                        <li class="placeselect">
+                            <a href="#" class="district">新北市</a>
+                        </li>
+                        <li class="placeselect">
+                            <a href="#" class="district">板橋區</a>
+                        </li>
+                    </ol>
+                </header>
+
+
+                <main id="mainContent" class="mainContent">
+                    <div class="shopContent">
+                        <div class="restaurantBanner">
+                            <!-- 餐廳照片 -->
+                            <div class="restaurantMasonry collection">
+                                <button type="button" class="foodimg">
+                                    <img src="https://resizer.otstatic.com/v2/photos/xlarge/1/52883170.webp"
+                                        alt="金色三麥板橋店" class="foodImg" title="金色三麥板橋店" />
+                                </button>
+                                <button type="button" class="foodimg">
+                                    <img src="https://resizer.otstatic.com/v2/photos/xlarge/1/52883165.webp"
+                                        alt="金色三麥板橋店" class="foodImg" title="金色三麥板橋店" />
+                                </button>
+                                <button type="button" class="foodimg">
+                                    <img src="https://resizer.otstatic.com/v2/photos/xlarge/1/52883162.webp"
+                                        alt="金色三麥板橋店" class="foodImg" title="金色三麥板橋店" />
+                                </button>
+                                <button type="button" class="foodimg">
+                                    <img src="https://resizer.otstatic.com/v2/photos/xlarge/1/52883155.webp"
+                                        alt="金色三麥板橋店" class="foodImg" title="金色三麥板橋店" />
+                                </button>
+                                <button type="button" class="foodimg">
+                                    <img src="https://resizer.otstatic.com/v2/photos/xlarge/1/52733234.webp"
+                                        alt="金色三麥板橋店" class="foodImg" title="金色三麥板橋店" />
+                                </button>
+                            </div>
+
+                            <!-- 將這家餐廳加入珍藏 按鈕 -->
+                            <button id="restaurant-save" type="button" class="restaurantsave">
+                                <div class="v7ObJiIJwpG1xnO4IMe3">
+                                    <img class="bookmark" src="//cdn.otstatic.com/cfe/14/images/ic_bookmark-f6a8ce.svg"
+                                        alt="" />
+                                    <div class="wordsDisappear contain">將這家餐廳加入珍藏</div>
+                                </div>
+                            </button>
+
+                            <button id="restaurant-all-photos" type="button"
+                                class="restaurantallphotos contain">查看所有21​照片</button>
+                        </div>
+
+                        <div class="RestaurantIntro">
+                            <div class="RestaurantInfo">
+                                <!-- TAB總覽相片菜單評論 -->
+                                <section class="tabContainer">
+                                    <nav class="tabDetails">
+                                        <ol class="">
+                                            <li class="" data-test="tab-navigation-button" role="tab" aria-label="總覽"
+                                                aria-selected="true" tabindex="0">
+                                                <span class="tabButton">總覽</span>
+                                            </li>
+                                            <li class="" data-test="tab-navigation-button" role="tab" aria-label="相片"
+                                                aria-selected="false" tabindex="-1">
+                                                <span class="tabButton">相片</span>
+                                            </li>
+                                            <li class="" data-test="tab-navigation-button" role="tab" aria-label="菜單"
+                                                aria-selected="false" tabindex="-1">
+                                                <span class="tabButton">菜單</span>
+                                            </li>
+                                            <li class="" data-test="tab-navigation-button" role="tab" aria-label="評論"
+                                                aria-selected="false" tabindex="-1">
+                                                <span class="tabButton">評論</span>
+                                            </li>
+                                        </ol>
+                                        <div class="e45q8iG5ryjKYSzKSvD0 lulAfE0oZLUQueXT9kA8"></div>
+                                    </nav>
+                                </section>
+
+                                <section>
+                                    <div class="restaurantTitle">
+                                        <h1 class="restaurantName">金色三麥 板橋店</h1>
+                                    </div>
+                                    <div class="restaurantOverviewHeader">
+                                        <div class="ratingInfo">
+                                            <div class="commentRating"></div>
+                                            <span class="QBMm80naGcMZ6qlVk6OI contain">4.5</span>
+                                        </div>
+
+                                        <div class="eGVFHwFNmfG0mKcGjSGf contain" id="reviewInfo">
+                                            <span class="ic BlIrzraLsBsehdCM8khx" data-test="icReview"
+                                                data-testid="icReview">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                    focusable="false">
+                                                    <g fill="none" fill-rule="evenodd">
+                                                        <path
+                                                            d="M19,4 L5,4 C3.8954305,4 3,4.8954305 3,6 L3,15 C3,16.1045695 3.8954305,17 5,17 L11,17 L15.36,20.63 C15.6583354,20.8784924 16.0735425,20.9318337 16.4250008,20.7668198 C16.776459,20.6018059 17.0006314,20.2482681 17,19.86 L17,17 L19,17 C20.1045695,17 21,16.1045695 21,15 L21,6 C21,4.8954305 20.1045695,4 19,4 Z M19,15 L15,15 L15,17.73 L11.72,15 L5,15 L5,6 L19,6 L19,15 Z"
+                                                            fill="#2D333F" fill-rule="nonzero" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <span>7則評論</span>
+                                        </div>
+                                        <div class="eGVFHwFNmfG0mKcGjSGf contain" id="priceBandInfo">
+                                            <span class="ic BlIrzraLsBsehdCM8khx" data-test="icPriceRange"
+                                                data-testid="icPriceRange">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                    focusable="false">
+                                                    <g fill="none" fill-rule="evenodd">
+                                                        <path
+                                                            d="M20,15 L20,9 L18.5,9 C18.2238576,9 18,8.77614237 18,8.5 L18,7 L6,7 L6,8.5 C6,8.77614237 5.77614237,9 5.5,9 L4,9 L4,15 L5.5,15 C5.77614237,15 6,15.2238576 6,15.5 L6,17 L18,17 L18,15.5 C18,15.2238576 18.2238576,15 18.5,15 L20,15 Z M4,5 L20,5 C21.1045695,5 22,5.8954305 22,7 L22,17 C22,18.1045695 21.1045695,19 20,19 L4,19 C2.8954305,19 2,18.1045695 2,17 L2,7 C2,5.8954305 2.8954305,5 4,5 Z M12,10 C13.1045695,10 14,10.8954305 14,12 C14,13.1045695 13.1045695,14 12,14 C10.8954305,14 10,13.1045695 10,12 C10,10.8954305 10.8954305,10 12,10 Z"
+                                                            fill="#2D333F" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <span>NT$999及以下</span>
+                                        </div>
+                                        <div class="eGVFHwFNmfG0mKcGjSGf contain" id="cuisineInfo">
+                                            <span class="ic BlIrzraLsBsehdCM8khx" data-test="icCuisine"
+                                                data-testid="icCuisine">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                    focusable="false">
+                                                    <g fill="none" fill-rule="evenodd">
+                                                        <path
+                                                            d="M11,2 C12.1045695,2 13,2.8954305 13,4 L13,11 C13,12.1045695 12.1045695,13 11,13 L10,13 L10,21 C10,21.5522847 9.55228475,22 9,22 L8,22 C7.44771525,22 7,21.5522847 7,21 L7,13 L6,13 C4.8954305,13 4,12.1045695 4,11 L4,4 C4,2.8954305 4.8954305,2 6,2 L11,2 Z M11,11 L11,4 L10,4 L10,8.5 C10,8.77614237 9.77614237,9 9.5,9 C9.22385763,9 9,8.77614237 9,8.5 L9,4 L8,4 L8,8.5 C8,8.77614237 7.77614237,9 7.5,9 C7.22385763,9 7,8.77614237 7,8.5 L7,4 L6,4 L6,11 L11,11 Z M19.45,2 C19.7537566,2 20,2.24624339 20,2.55 L20,21 C20,21.5522847 19.5522847,22 19,22 L18,22 C17.4477153,22 17,21.5522847 17,21 L17,17 L16,17 C14.8954305,17 14,16.1045695 14,15 L14,7.45 C14,4.44004811 16.4400481,2 19.45,2 Z M16,15 L18,15 L18,4.32 C16.7823465,4.88673047 16.0026709,6.10692278 16,7.45 L16,15 Z"
+                                                            fill="#2D333F" fill-rule="nonzero" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <span>美式料理</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="TFgNebs8ung_y9HU2Nja" data-test="restaurant-top-tags">
+                                        <span class="fMsLWV9GMx4Lpp5yalfb aqBt8GEfHa8tUN4Kud9f">熱門標籤：</span>
+                                        <ul class="JkyuZ07GX7bYLBoCwKNu">
+                                            <li class="tN6JgwonEq1bGa98rTLI">
+                                                <span
+                                                    class="f2fKhqqQOowgslgl_jaP IdI1_cJciKCXMKY7hvXg contain">精釀啤酒首選</span>
+                                            </li>
+                                            <li class="tN6JgwonEq1bGa98rTLI">
+                                                <span
+                                                    class="f2fKhqqQOowgslgl_jaP IdI1_cJciKCXMKY7hvXg contain">歡樂時光首選</span>
+                                            </li>
+                                            <li class="tN6JgwonEq1bGa98rTLI">
+                                                <span
+                                                    class="f2fKhqqQOowgslgl_jaP IdI1_cJciKCXMKY7hvXg contain">氣氛熱絡</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                    <!-- 訂位視窗 -->
+                                    <div class="restaurantWrapper">
+                                        <article class="bookableContainer">
+                                            <h2 class="bookableTitle">訂位</h2>
+                                            <div class="bookableDetails">
+                                                <div data-test="">
+                                                    <label class="NumberOfReserve">用餐人數</label>
+                                                    <div class="NumberSelect">
+                                                        <select class="NumberOption">
+                                                            <option value="1">1位</option>
+                                                            <option value="2">2位</option>
+                                                            <option value="3">3位</option>
+                                                            <option value="4">4位</option>
+                                                            <option value="5">5位</option>
+                                                            <option value="6">6位</option>
+                                                            <option value="7">7位</option>
+                                                            <option value="8">8位</option>
+                                                            <option value="9">9位</option>
+                                                            <option value="10">10位</option>
+                                                            <option value="11">11位</option>
+                                                            <option value="12">12位</option>
+                                                            <option value="13">13位</option>
+                                                            <option value="14">14位</option>
+                                                            <option value="15">15位</option>
+                                                            <option value="16">16位</option>
+                                                            <option value="17">17位</option>
+                                                            <option value="18">18位</option>
+                                                            <option value="19">19位</option>
+                                                            <option value="20">20位</option>
+                                                        </select>
+                                                        <div class="DnYuMC7SX0ktW_eyFLZl aqBt8GEfHa8tUN4Kud9f sQLQpbSFdfqeyxPTRStA"
+                                                            data-testid="party-size-picker-overlay">
+                                                            <div class="ZKMlkp7pRERrDdyKBOsh">
+                                                                <div class="mFqn9avpnEk4DaaVV4UE">2位</div>
+                                                                <span class="ic kcldsUQv4uHKDVPb9pZQ" data-test="icDown"
+                                                                    data-testid="icDown" aria-hidden="true">
+                                                                    <svg viewBox="0 0 24 24"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        focusable="false">
+                                                                        <g fill="none" fill-rule="evenodd">
+                                                                            <path
+                                                                                d="M11,11 L11,14.5 C11,14.7761424 10.7761424,15 10.5,15 L9.5,15 C9.22385763,15 9,14.7761424 9,14.5 L9,10.5 L9,9.5 C9,9.22385763 9.22385763,9 9.5,9 L14.5,9 C14.7761424,9 15,9.22385763 15,9.5 L15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L11,11 Z"
+                                                                                fill="#2D333F"
+                                                                                transform="translate(12.000000, 12.000000) rotate(-135.000000) translate(-12.000000, -12.000000)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                </section>
+                                <section id="photos">
+                                    <div class="ZgSAo3R9t4oqRkrkWf3Z" data-test="restaurant-photos"
+                                        data-testid="restaurant-photos">
+                                        <div class="loadingBlock kDj7lXC5Ot0_kUP004KH"></div>
+                                    </div>
+                                </section>
+                                <section class="nXQl30a4qw1osTKbT3IO" id="menu">
+                                    <header data-test="section-header" class="yTP15dQeBCtN8gZPWtKV">
+                                        <div class="RFGzLM0dYfPknxoHIVaq">
+                                            <h2 class="n3VjEYZ90eGAL7bL007A ze3KHsQkhobLPh5Iyewb">菜單</h2>
+                                        </div>
+                                    </header>
+                                    <a href="https://inline.app/get-printed-menus?cid=-KgvwgRUCRhdQfrVsuI3:inline-live-lebledor&amp;bid=-KnIiFJZ3UJuyS5cgaBM"
+                                        class="JINvM1QBDFqby0Geg27_ _fZVWww14EK0umyzI9Kx e1Hv_189aEng9_rVUs5L"
+                                        target="_blank">
+                                        <span class="ic" data-test="icNewWindow" data-testid="icNewWindow">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                focusable="false">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path
+                                                        d="M19.5,4 C19.7761424,4 20,4.22385763 20,4.5 L20,9.5 C20,9.77614237 19.7761424,10 19.5,10 L18.5,10 C18.2238576,10 18,9.77614237 18,9.5 L18,7.41 L12.18,13.25 C12.0861167,13.3446563 11.9583188,13.3978992 11.825,13.3978992 C11.6916812,13.3978992 11.5638833,13.3446563 11.47,13.25 L10.76,12.54 C10.6653437,12.4461167 10.6121008,12.3183188 10.6121008,12.185 C10.6121008,12.0516812 10.6653437,11.9238833 10.76,11.83 L16.59,6 L14.5,6 C14.2238576,6 14,5.77614237 14,5.5 L14,4.5 C14,4.22385763 14.2238576,4 14.5,4 L19.5,4 Z M19.5,14 C19.7761424,14 20,14.2238576 20,14.5 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,6 C4,4.8954305 4.8954305,4 6,4 L9.5,4 C9.77614237,4 10,4.22385763 10,4.5 L10,5.5 C10,5.77614237 9.77614237,6 9.5,6 L6,6 L6,18 L18,18 L18,14.5 C18,14.2238576 18.2238576,14 18.5,14 L19.5,14 Z"
+                                                        fill="#2D333F" fill-rule="nonzero" />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                        <span class="tLpKhSk9eXZevWNwNBmF contain"
+                                            data-test="menu-external-link">在餐廳網站查看菜單</span>
+                                    </a>
+                                </section>
+
+
+                                <section class="nXQl30a4qw1osTKbT3IO" id="reviews">
+                                    <section data-test="" data-testid="" class="JGUh4CK2UC7xyZKgbGjj">
+                                        <header data-test="section-header" class="yTP15dQeBCtN8gZPWtKV">
+                                            <div class="RFGzLM0dYfPknxoHIVaq">
+                                                <h2 class="n3VjEYZ90eGAL7bL007A ze3KHsQkhobLPh5Iyewb">其他7位顧客怎麽説</h2>
+                                            </div>
+                                        </header>
+
+                                        <div class="OgRqAVnEhLBUic1yOtEc" data-test="reviews-search">
+                                            <form class="Rx_4t4IA4_eTUVvklm6g">
+                                                <div class="LWqe4XonvsevD6AGot0g">
+                                                    <span class="ic Hk9wPsY5NwW2ijoXABdP" data-test="icSearch"
+                                                        data-testid="icSearch">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                            focusable="false">
+                                                            <g fill="none" fill-rule="evenodd">
+                                                                <path
+                                                                    d="M13,15.9291111 L13,21.5 C13,21.7761424 12.7761424,22 12.5,22 L11.5,22 C11.2238576,22 11,21.7761424 11,21.5 L11,15.9291111 C7.60770586,15.4438815 5,12.5264719 5,9 C5,5.13400675 8.13400675,2 12,2 C15.8659932,2 19,5.13400675 19,9 C19,12.5264719 16.3922941,15.4438815 13,15.9291111 Z M12,4 C9.23857625,4 7,6.23857625 7,9 C7,11.7614237 9.23857625,14 12,14 C14.7614237,14 17,11.7614237 17,9 C17,6.23857625 14.7614237,4 12,4 Z"
+                                                                    fill="#2D333F" fill-rule="nonzero"
+                                                                    transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000)" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <input id="searchTerm" class="MEX4ObJIjo4_6R8CAUT9 DUkDy8G7CgNvYcWgJYPN"
+                                                    placeholder="搜尋所有評價" aria-label="搜尋所有評價" type="search"
+                                                    data-test="reviews-search-box" value="" />
+                                            </form>
+                                        </div>
+                                        <div class="Tv1nYfGQyOfLLOR4rDtY">
+                                            <span class="Lzj42m27y2i1i3NmM0F9 cN6qW64yh1EqiYle1iq2"
+                                                data-test="reviews-count">7 則評論</span>
+                                            <!--$!-->
+                                            <template data-dgst="ReactClientSideOnly"></template>
+                                            <div class="loadingBlock" data-testid="loadingBlock"
+                                                data-test="loading-block"></div>
+                                            <!--/$-->
+                                        </div>
+
+
+                                        <!-- 顧客評論 -->
+                                        <ol aria-label="評論列表" id="restProfileReviewsContent"
+                                            class="dxLeFbidu7bvjN_7QEC2" data-test="reviews-list">
+                                            <li class="mbK0eco4h3AaJgKLBhb9" data-test="reviews-list-item">
+                                                <section class="Dy9dg_fThB5zI1c7xOg4">
+                                                    <div role="img" aria-label="OpenTable食客的虛擬替身照片"
+                                                        class="p8Afe04MnS6DogfbdRSJ contain JFEwzXVcRTWNctIP8zQP fay3YS5td0q6mbuTy24Y">
+                                                        M</div>
+                                                    <p class="V0gqMM0V5nr33Ha56k83 contain">Mila</p>
+                                                    <div class="SaFk3NbFipF4UzPmNV1S NvQhR1VNbSvDtuZB7N6I">
+                                                        <span class="ic o2UafTB5dzw1I85qsyQI" data-test="icReview"
+                                                            data-testid="icReview">
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                focusable="false">
+                                                                <g fill="none" fill-rule="evenodd">
+                                                                    <path
+                                                                        d="M19,4 L5,4 C3.8954305,4 3,4.8954305 3,6 L3,15 C3,16.1045695 3.8954305,17 5,17 L11,17 L15.36,20.63 C15.6583354,20.8784924 16.0735425,20.9318337 16.4250008,20.7668198 C16.776459,20.6018059 17.0006314,20.2482681 17,19.86 L17,17 L19,17 C20.1045695,17 21,16.1045695 21,15 L21,6 C21,4.8954305 20.1045695,4 19,4 Z M19,15 L15,15 L15,17.73 L11.72,15 L5,15 L5,6 L19,6 L19,15 Z"
+                                                                        fill="#2D333F" fill-rule="nonzero" />
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                        <p class="r8ymyb2xpfV3EowrmtBe contain">1則評論</p>
+                                                    </div>
+                                                </section>
+                                                <section class="ADHOnxYxENUUfweaCdW6">
+                                                    <section class="c3G0xjzKlnaEr6jJr29v contain">
+                                                        <div class="commentRating">
+                                                            <div class="vJWFYZLiWZbHIB0Hwa83" role="img"
+                                                                aria-label="5星">
+                                                                <div class="m94wF25CP7ISJAaF1Kau NnOa6nwqQSjcrOoqoTc_">
+                                                                    <i class="K2lMVzSi_oGonnJavy9h #da3743"
+                                                                        aria-hidden="true" tab-index="-1"
+                                                                        focusable="no"></i>
+                                                                </div>
+                                                                <div class="m94wF25CP7ISJAaF1Kau NnOa6nwqQSjcrOoqoTc_">
+                                                                    <i class="K2lMVzSi_oGonnJavy9h #da3743"
+                                                                        aria-hidden="true" tab-index="-1"
+                                                                        focusable="no"></i>
+                                                                </div>
+                                                                <div class="m94wF25CP7ISJAaF1Kau NnOa6nwqQSjcrOoqoTc_">
+                                                                    <i class="K2lMVzSi_oGonnJavy9h #da3743"
+                                                                        aria-hidden="true" tab-index="-1"
+                                                                        focusable="no"></i>
+                                                                </div>
+                                                                <div class="m94wF25CP7ISJAaF1Kau NnOa6nwqQSjcrOoqoTc_">
+                                                                    <i class="K2lMVzSi_oGonnJavy9h #da3743"
+                                                                        aria-hidden="true" tab-index="-1"
+                                                                        focusable="no"></i>
+                                                                </div>
+                                                                <div class="m94wF25CP7ISJAaF1Kau NnOa6nwqQSjcrOoqoTc_">
+                                                                    <i class="K2lMVzSi_oGonnJavy9h #da3743"
+                                                                        aria-hidden="true" tab-index="-1"
+                                                                        focusable="no"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="Sssqfi7z0_YZugOpowNY">5.0</div>
+                                                        </div>
+                                                        <div class="SaFk3NbFipF4UzPmNV1S pZDUTHhABtOStIz6eCrJ">
+                                                            <span class="ic o2UafTB5dzw1I85qsyQI" data-test="icReview"
+                                                                data-testid="icReview">
+                                                                <svg viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    focusable="false">
+                                                                    <g fill="none" fill-rule="evenodd">
+                                                                        <path
+                                                                            d="M19,4 L5,4 C3.8954305,4 3,4.8954305 3,6 L3,15 C3,16.1045695 3.8954305,17 5,17 L11,17 L15.36,20.63 C15.6583354,20.8784924 16.0735425,20.9318337 16.4250008,20.7668198 C16.776459,20.6018059 17.0006314,20.2482681 17,19.86 L17,17 L19,17 C20.1045695,17 21,16.1045695 21,15 L21,6 C21,4.8954305 20.1045695,4 19,4 Z M19,15 L15,15 L15,17.73 L11.72,15 L5,15 L5,6 L19,6 L19,15 Z"
+                                                                            fill="#2D333F" fill-rule="nonzero" />
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <p class="r8ymyb2xpfV3EowrmtBe contain">1則評論
+                                                            </p>
+                                                        </div>
+                                                        <p class="Xfrgl6cRPxn4vwFrFgk1">在2023年7月11日用過餐</p>
+                                                    </section>
+                                                    <section class="c3G0xjzKlnaEr6jJr29v contain">
+                                                        <span class="ntw1CLrK8o6PhYhcRux1">overall</span>
+                                                        <span class="Q2DbumELlxH4s85dk8Mj">5</span>
+                                                        <span class="ntw1CLrK8o6PhYhcRux1">food</span>
+                                                        <span class="Q2DbumELlxH4s85dk8Mj">4</span>
+                                                        <span class="ntw1CLrK8o6PhYhcRux1">service</span>
+                                                        <span class="Q2DbumELlxH4s85dk8Mj">4</span>
+                                                        <span class="ntw1CLrK8o6PhYhcRux1">ambience</span>
+                                                        <span class="Q2DbumELlxH4s85dk8Mj">5</span>
+                                                    </section>
+                                                    <div class="f3cNr0xDcwvMaBkpjQj5">
+                                                        <span data-test="wrapper-tag" data-testid="wrapper-tag"
+                                                            class="t9JcvSL3Bsj1lxMSi3pz h_kb2PFOoyZe1skyGiz9 DUkDy8G7CgNvYcWgJYPN"
+                                                            style="line-height:24px;max-height:72px;overflow:hidden;-webkit-line-clamp:3">整體餐飲食物都蠻滿意的，氣氛也很好，適合
+                                                            聚會的場所。每次來用餐都非常開心！
+                                                            唯一值得提到的是，沒吃完的餐點幫我們打包
+                                                            的時候，記得要把我們說明要包的餐點包起來！
+                                                            謝謝提供這麼棒的場所，給我及我們的家人朋友一起度過快樂的時光！</span>
+                                                        <span
+                                                            class="t9JcvSL3Bsj1lxMSi3pz h_kb2PFOoyZe1skyGiz9 DUkDy8G7CgNvYcWgJYPN">
+                                                            <br />
+                                                        </span>
+                                                    </div>
+                                                    <div class="ByKOB31lMVcJy2KcrsfT" data-test="review-photos"></div>
+                                                    <div class="HL583KqLswHVweEv7sYa UhlFZarqEFUVIUGIbaMi">
+
+                                                        <button type="button"
+                                                            class="NtIWYBPGFDnJpCfd0NEh i5Uv2no9QZ9_c6Tv95fw">
+                                                            <span class="ic lrrzQPafT4s88j_9IyJO" data-test="icReport"
+                                                                data-testid="icReport">
+                                                                <svg viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    focusable="false">
+                                                                    <g fill="none" fill-rule="evenodd">
+                                                                        <path
+                                                                            d="M16,8 L19.55,3.9 C19.7765448,3.64479903 19.9317661,3.33435639 20,3 C20,2.44771525 19.5522847,2 19,2 L6,2 C4.8954305,2 4,2.8954305 4,4 L4,21 C4,21.5522847 4.44771525,22 5,22 C5.55228475,22 6,21.5522847 6,21 L6,14 L19,14 C19.5522847,14 20,13.5522847 20,13 C19.9688341,12.6188683 19.7978781,12.2627099 19.52,12 L16,8 Z M6,12 L6,4 L16.82,4 L14.49,6.69 L13.34,8 L14.5,9.32 L16.86,12 L6,12 Z"
+                                                                            fill="#2D333F" fill-rule="nonzero" />
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            Report
+                                                        </button>
+                                                    </div>
+                                                </section>
+                                            </li>
+                                        </ol>
+
+                                    </section>
+                                </section>
+
+
+                                <section class="常見問答">
+
+                                </section>
+                            </div>
+
+
+                            <div class="hBNE0g9NxqM222PB6mKC">
+                                <div class="LFww692eEO9vhXLmvDO1">
+                                    <article class="bookableContainer">
+                                        <h2 class="bookableTitle">訂位</h2>
+                                        <div class="bookableDetails">
+                                            <div data-test="">
+                                                <label class="NumberOfReserve">用餐人數</label>
+                                                <div class="NumberSelect">
+                                                    <select class="NumberOption">
+                                                        <option value="1">1位</option>
+                                                        <option value="2">2位</option>
+                                                        <option value="3">3位</option>
+                                                        <option value="4">4位</option>
+                                                        <option value="5">5位</option>
+                                                        <option value="6">6位</option>
+                                                        <option value="7">7位</option>
+                                                        <option value="8">8位</option>
+                                                        <option value="9">9位</option>
+                                                        <option value="10">10位</option>
+                                                        <option value="11">11位</option>
+                                                        <option value="12">12位</option>
+                                                        <option value="13">13位</option>
+                                                        <option value="14">14位</option>
+                                                        <option value="15">15位</option>
+                                                        <option value="16">16位</option>
+                                                        <option value="17">17位</option>
+                                                        <option value="18">18位</option>
+                                                        <option value="19">19位</option>
+                                                        <option value="20">20位</option>
+                                                    </select>
+                                                    <div class="DnYuMC7SX0ktW_eyFLZl aqBt8GEfHa8tUN4Kud9f sQLQpbSFdfqeyxPTRStA"
+                                                        data-testid="party-size-picker-overlay">
+                                                        <div class="ZKMlkp7pRERrDdyKBOsh">
+                                                            <div class="mFqn9avpnEk4DaaVV4UE">2位</div>
+                                                            <span class="ic kcldsUQv4uHKDVPb9pZQ" data-test="icDown"
+                                                                data-testid="icDown" aria-hidden="true">
+                                                                <svg viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    focusable="false">
+                                                                    <g fill="none" fill-rule="evenodd">
+                                                                        <path
+                                                                            d="M11,11 L11,14.5 C11,14.7761424 10.7761424,15 10.5,15 L9.5,15 C9.22385763,15 9,14.7761424 9,14.5 L9,10.5 L9,9.5 C9,9.22385763 9.22385763,9 9.5,9 L14.5,9 C14.7761424,9 15,9.22385763 15,9.5 L15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L11,11 Z"
+                                                                            fill="#2D333F"
+                                                                            transform="translate(12.000000, 12.000000) rotate(-135.000000) translate(-12.000000, -12.000000)" />
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="VaVawDCynwZrm3Y9Fc_X">
+
+
+                                            </div>
+                                            <div class="orZ1H54SLxa55rLJ35P6">
+                                                <hr class="j1tQ7DBGfGnD2zrPb89N EA70U0ovSZpsWMnulobS" />
+                                                <hr class="j1tQ7DBGfGnD2zrPb89N EA70U0ovSZpsWMnulobS" />
+                                            </div>
+                                            <div class="UZ_e0x4iWqdD2wWEBas0">
+                                                <button type="button"
+                                                    class="oj_Zftq0Z_Ts7usxdiLc WkATSvkvJnLhgjlINRzg n0GonOKcEH4mc03kM4Jz pREW2ZkuYncjapZLLnc3"
+                                                    aria-disabled="false" data-test="dtp-picker-card-find-button"
+                                                    aria-label="尋找時間" tabindex="0">尋找時間</button>
+                                            </div>
+                                            <section class="kNEybOHj3PW8oo8e2ajc">
+                                                <span class="Rv4uk4xWG5CqQmf74o1v contain">
+                                                    <span class="ic LffiIoriTgSTcpu9gCNO" data-test="icSocialProof"
+                                                        data-testid="icSocialProof">
+                                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                            focusable="false">
+                                                            <g fill="none" fill-rule="evenodd">
+                                                                <path
+                                                                    d="M15.5,5 C15.2239,5 15,5.223846 15,5.5 L15,6.5 C15,6.77615 15.2239,7 15.5,7 L17.5858,7 L14,10.58578 L12.70711,9.29291 L12.35355,8.93933 C12.15829,8.74408 11.84171,8.74408 11.64645,8.93933 L11.29289,9.29291 L5,15.5858 L5,7 L11.5,7 C11.77614,7 12,6.77615 12,6.5 L12,5.5 C12,5.22385 11.77614,5 11.5,5 L5,5 C3.89543,5 3,5.89542 3,7 L3,17 C3,18.1046 3.89543,19 5,19 L19,19 C20.1046,19 21,18.1046 21,17 L21,14.5 C21,14.2238 20.7761,14 20.5,14 L19.5,14 C19.2239,14 19,14.2238 19,14.5 L19,17 L6.4142,17 L12,11.41422 L13.2929,12.70709 L13.6464,13.06067 C13.8417,13.25592 14.1583,13.25592 14.3536,13.06067 L14.7071,12.70709 L19,8.41422 L19,10.5 C19,10.77615 19.2239,11 19.5,11 L20.5,11 C20.7761,11 21,10.77615 21,10.5 L21,6 L21,5.5 C21,5.223846 20.7761,5 20.5,5 L20,5 L15.5,5 Z"
+                                                                    fill="#2D333F" fill-rule="nonzero" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                    今天已預訂9次
+                                                </span>
+                                                <div class="ACyfxUxNJzlXdjQP37xg Kz4W4edZNa6Ui9vLR9gB"></div>
+                                            </section>
+                                        </div>
+                                    </article>
+
+
+                                    <article data-test="cta-card-rest-profile"
+                                        class="bookableContainer ZjAk10YGmkrEQ3TnJPI1">
+                                        <h2 class="bookableTitle">預訂外送或外帶</h2>
+                                    </article>
+                                </div>
+
+
+                                <section class="restaurant-details">
+                                    <div class="restaurant-details"></div>
+                                </section>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+
+
+
+
+
+                <!-- footer -->
+                <div class="footer">
+                    <div class="footerContent">
+                        <div class="linkFarm">
+                            <!-- 上排的連結(探索/opentable/其他/商務) -->
+                            <div class="columnLink">
+                                <div class="classification">
+                                    <div class="classificationTitle">探索</div>
+                                    <ul class="website">
+                                        <li>
+                                            <div class="websiteTitle" role="button">幫其他人訂位</div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="websiteTitle" title="我附近的餐廳">我附近的餐廳</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="classification">
+                                    <div class="classificationTitle">OpenTable</div>
+                                    <ul class="website">
+                                        <li>
+                                            <div class="websiteTitle" role="button">關於我們</div>
+                                        </li>
+                                        <li>
+                                            <div class="websiteTitle" role="button">工作機會</div>
+                                        </li>
+                                        <li>
+                                            <div class="websiteTitle" role="button">媒體聯絡</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="classification">
+                                    <div class="classificationTitle">其他</div>
+                                    <ul class="website">
+                                        <li>
+                                            <a href="#" class="websiteTitle">iOS版OpenTable</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="websiteTitle">Android版OpenTable</a>
+                                        </li>
+                                        <li>
+                                            <div class="websiteTitle" role="button">聯絡我們</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="classification">
+                                </div>
+                                <div class="classification">
+                                    <div class="classificationTitle">商務</div>
+                                    <ul class="website">
+                                        <li>
+                                            <div class="websiteTitle" role="button">征服更多食客的味蕾</div>
+                                        </li>
+                                        <li>
+                                            <div class="websiteTitle" role="button">「開門營業」部落格</div>
+                                        </li>
+                                    </ul>
+                                    <div class="classificationTitle joinus">加入我們：</div>
+                                    <div>
+                                        <button type="button" class="socialmedia">
+                                            <div class="imgbutton">
+                                                <span class="logobutton">
+                                                    <img class="logobutton"
+                                                        src="https://cdn.otstatic.com/cfe/14/images/twitter-7d99dc.svg"
+                                                        alt="Twitter" title="">
+                                                </span>
+                                            </div>
+                                        </button>
+                                        <button type="button" class="socialmedia">
+                                            <div class="imgbutton">
+                                                <span class="logobutton">
+                                                    <img class="logobutton"
+                                                        src="https://cdn.otstatic.com/cfe/14/images/facebook-7e4d6d.svg"
+                                                        alt="Facebook" title="" />
+                                                </span>
+                                            </div>
+                                        </button>
+                                        <button type="button" class="socialmedia">
+                                            <div class="imgbutton">
+                                                <span class="logobutton">
+                                                    <img class="logobutton"
+                                                        src="https://cdn.otstatic.com/cfe/14/images/linkedin-b5ed36.svg"
+                                                        alt="Linkedin" title="" />
+                                                </span>
+                                            </div>
+                                        </button>
+                                        <button type="button" class="socialmedia">
+                                            <div class="imgbutton">
+                                                <span class="logobutton">
+                                                    <img class="logobutton"
+                                                        src="https://cdn.otstatic.com/cfe/14/images/instagram-22dae7.svg"
+                                                        alt="Instagram" title="" />
+                                                </span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
