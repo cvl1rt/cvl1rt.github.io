@@ -2,26 +2,26 @@
     max-width: 800px;
 }
  .container h1{
-    color:rgb(33, 56, 33);
+    color:rgb(9, 10, 9);
     margin:25px;
     text-align: center;
     font-weight: 600;
 }
 
 #yearMonth {
-    color: #356237;
+    color: #070b07;
     font-weight: bold;
     display: flex;
     font-size: 22px;
 }
 
 .btn {
-    color: #575f6a;
+    color: #090a0a;
     font-weight: 600px;
 }
 
 .btn:hover {
-    color: #816161;
+    color: #5d5a5a;
 }
 
 .weekdays>div {
@@ -35,9 +35,9 @@
     width: 100px;
     height: 100px;
     margin:5px;
-    border: 2px solid rgb(63, 109, 68);
+    border: 2px solid rgb(14, 15, 14);
     background-color: #ffffff;
-    color: #03045e;
+    color: #09090a;
 
 }
 
@@ -52,4 +52,19 @@
 
 .note {
     color: #784259;
+}
+
+.background-image img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 350px;
+}
+
+.background-image {
+    position: relative;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }

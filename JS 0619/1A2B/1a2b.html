@@ -1,91 +1,118 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>1A2B</title>
-  <style>
-    *{
-    margin: 0;
-    padding: 0;
-}
-body{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-}
+    <title>1A2B GAME</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-.main{
-    border: 1px solid black;
-    box-shadow: 20px 20px 20px rgb(178, 186, 178);
-    width: 450px;
-    text-align: center;
-}
-.main .title{
-    font-size: 30px;
-    font-weight: bold;
-    padding: 30px;
-}
-.main .input {
-    margin-bottom: 20px;
-    position: relative;
-    justify-content: space-between;
-}
-.main .input input{
-    border: 1px solid black;
-    width: 200px;
-    padding: 5px;
-    font-size: 20px;
-    text-align: center;
-}
-.main .input .btn-clear{
-    background-color: white;
-    box-sizing: border-box;
-    font-size: 15px;
-    padding:  0 5px;
-    position: absolute;
-    right: 30px;
-    top: 10px;
-}
+        body {
+            position: relative;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px;
+        }
 
-.main .screen{
-    border: 1px solid black;
-    width: 300px;
-    height: 200px;
-    overflow: auto;
-    margin: auto;
-}
-.main .buttons{
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    margin: 30px auto;
-    justify-content: space-between;
+        .main {
+            position: relative;
+            z-index: 2;
+            border: 1px solid black;
+            box-shadow: 20px 20px 20px rgb(178, 186, 178);
+            width: 450px;
+            text-align: center;
+        }
 
-}
-.main .buttons .btn{
-    background-color: white;
-    width: 40px;
-    font-size: 20px;
-    margin: 10px;
-}
-.main .buttons .btn-press{
-    width: fit-content;
-    padding: 0 25px;
-}
-.main .btn-other{
-    width: 80%;
-}
-.main .btn-other .btn{
-    width: fit-content;
-    font-size: 15px;
-    padding: 5px;
-}
+        .main .title {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 30px;
+        }
 
+        .main .input {
+            margin-bottom: 20px;
+            position: relative;
+            justify-content: space-between;
+        }
 
-  </style>
+        .main .input input {
+            border: 1px solid black;
+            width: 200px;
+            padding: 5px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .main .input .btn-clear {
+            background-color: white;
+            box-sizing: border-box;
+            font-size: 15px;
+            padding: 0 5px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+        }
+
+        .main .screen {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            margin: auto;
+        }
+
+        .main .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            width: 200px;
+            margin: 30px auto;
+            justify-content: space-between;
+
+        }
+
+        .main .buttons .btn {
+            background-color: white;
+            width: 40px;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .main .buttons .btn-press {
+            width: fit-content;
+            padding: 0 25px;
+        }
+
+        .main .btn-other {
+            width: 80%;
+        }
+
+        .main .btn-other .btn {
+            width: fit-content;
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        .background-image img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 350px;
+        } 
+
+        .background-image {
+            position: relative;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -94,7 +121,6 @@ body{
         <section class="title">1A2B GAME</section>
         <div class="input">
             <input type="text" placeholder="">
-            
         </div>
         <section class="screen"></section>
         <section class="buttons">
@@ -115,10 +141,11 @@ body{
             <button class="btn btn-clear">Clear</button>
             <button class="btn btn-answer">Answer</button>
             <button class="btn btn-restart">Restart</button>
-            
-          
         </section>
     </div>
+    <div class="background-image">
+     <img src="codegrandma2.jpg">
+    
 
     <script src="script.js"></script>
 

@@ -1,31 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guess The Code</title>
     <style>
-        .content{
-            background-color: rgb(198, 214, 198);
-            padding: 30px;
-            width:300px;
-            border-radius: 12%;
-            margin:50px auto;
+        .content {
+            border: 2px solid #000000;
+            padding: 40px;
+            width: 350px;
+            border-radius: 8%;
+            margin: 70px auto;
             text-align: center;
+            position: relative;
+        }
 
+        .content::before {
+            content: '';
+            background-image: url('codegrandma2.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.7;
+            z-index: -1;
         }
-        h1{
-            color: rgb(58, 68, 61);
-        }
-        .content-number{
+
+        .content-number {
             padding: 20px;
         }
-        .number{
-            margin:5px;
+
+        .number {
+            margin: 8px;
             font-size: 13px;
-            
         }
     </style>
 </head>
@@ -94,7 +104,7 @@
                 range.innerText = `輸入${min}~${max}的整數`
             }
             else {
-                range.innerText = '猜中了!!!'
+                range.innerText = '正確!!!'
             }
         }
         //window.onload
