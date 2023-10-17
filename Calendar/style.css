@@ -1,5 +1,7 @@
 .container {
     max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
  .container h1{
     color:rgb(9, 10, 9);
