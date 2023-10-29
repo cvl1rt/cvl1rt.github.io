@@ -1,96 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CodeGrandma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        * {
-            padding: 20px 20px;
-        }
-
         body {
-            background-color: black
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
         }
 
-        a:link {
-            text-decoration: none;
+        .btn {
+            margin: 50px;
+            width: 100px;
         }
-
-        h1 {
-            color: rgb(237, 243, 237);
-        }
-
-        h2 {
-            color:aliceblue;
-            font-size: 18px;
-            border: 2px solid white;
-            border-radius: 10%;
-            display: inline-block;
-        }
-
-        .group a {
-            color: rgb(248, 251, 248);
-            font-size: 20px;
-
-        }
-
-        .group a:hover {
-            content: '';
-            background-color: rgba(130, 136, 130, 0.645);
-        }
-
-         .background-image {
-            position: relative;
-        } 
 
         .background-image img {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        } 
-
-        .background-image img {
-            width: 350px;
+            width: 100%;
+            max-width: 600px;
+            height: auto;
         }
 
-        .background-image {
+        @media screen and (max-width: 600px) {
+            .btn {
+                margin: 20px;
+                width: 80px;
+            }
+        }
+
+        .intro {
+            display: none;
             position: fixed;
-            bottom: 0;
-            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #f2f0f0e0;
+            padding: 20px;
+            border: 1px solid #000;
+            box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+            width: 500px;
+            height: 280px;
+            white-space: pre-line;
+            border-radius: 5%;
+        }
+
+        #close {
+            position: absolute;
+            bottom: 20px;
+            right:20px;
+            cursor: pointer;
+            border-radius: 20%;
         }
     </style>
+
+
+
 </head>
 
 <body>
-    <div class="group">
-        <h1>☺ CodeGrandma's Collections</h1>
-        <h2>CSS 切版</h2>
-        <br>
-        <a href="./htmlcss day1/table/curriculum.html"> · Mytable</a>
-        <a href="./htmlcss day1/Anilove/Anilove.html"> · Anilove</a>
-        <a href="./htmlcss day2/shopline/Shopline.html"> · Shopline</a>
-        <a href="./htmlcss day4/toyota/toyota.html"> · Toyota</a>
-        <a href="./htmlcss day5/hawaii/hawaii.html"> · Hawaii</a>
-        <a href="./htmlcss day6/grid/grid.html"> · Grid practice</a>
-        <br>
-        <h2>JavaScript 小作品</h2>
-        <br>
-        <a href="./thecode/thecode.html"> · 猜數字</a>
-        <a href="./marketingShare/marketingShare.html"> · MarkrtingShare</a>
-        <a href="./LOL/LOL.html"> · LOL</a>
-        <a href="./1A2B/1a2b.html"> · 1A2B</a>/
-        <a href="./1A2B/1a2b_Bootstrap.html"> · 1A2B_Bootstrap</a>
-        <a href="./Apple/Apple.html"> · Apple</a>
-        <a href="./Calendar/Calendar.html"> · Calendar</a>
-        <a href="./littlemary/littlemary.html"> · 小瑪莉</a>
-        <a href="./Map/Map.html"> · Map - Youbike</a>
-        <a href="./ToDoList/todolist.html"> · To Do List </a>
-    </div>
     <div class="background-image">
         <img src="codegrandma.jpg" alt="Your Image">
+    </div>
+    <div class="buttons">
+        <button type="button" id="button_aboutme" class="btn btn-light">關於我</button>
+        <button type="button_resume" id="button_resume" class="btn btn-light">履歷</button>
+        <button type="button_collection" id="button_collection" class="btn btn-light" onclick="ToCollection()">作品集</button>
+    </div>
+
+    <div id="intro" class="intro">
+        <div class="content">
+            <p> 我是劉子瑜，今年26歲
+                在人資及業務領域有2.5的經驗
+                2023年在程式領域進修半年，學習全端語言
+                期望可以在資訊及科技領域擔任專案管理師
+
+                手機 : 0903-518-317
+                E-mail : skycoy1214@gmail.com
+            </p>
+            <button id="close">close</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('button_aboutme').addEventListener('click', function () {
+            var dialog = document.getElementById('intro');
+            dialog.style.display = 'block';
+        });
+
+        document.getElementById('close').addEventListener('click', function () {
+            var dialog = document.getElementById('intro');
+            dialog.style.display = 'none';
+        });
+
+        function ToCollection() {
+        window.location.href = "./index copy.html";
+    }
+
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
