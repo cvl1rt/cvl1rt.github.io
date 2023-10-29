@@ -52,8 +52,7 @@
             padding: 20px;
             border: 1px solid #000;
             box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-            width: 500px;
-            height: 280px;
+            padding: 30px;
             white-space: pre-line;
             border-radius: 5%;
         }
@@ -61,9 +60,13 @@
         #close {
             position: absolute;
             bottom: 20px;
-            right:20px;
+            right: 20px;
             cursor: pointer;
             border-radius: 20%;
+        }
+
+        #resume {
+            display: none;
         }
     </style>
 
@@ -78,20 +81,30 @@
     <div class="buttons">
         <button type="button" id="button_aboutme" class="btn btn-light">關於我</button>
         <button type="button_resume" id="button_resume" class="btn btn-light">履歷</button>
-        <button type="button_collection" id="button_collection" class="btn btn-light" onclick="ToCollection()">作品集</button>
+        <button type="button_collection" id="button_collection" class="btn btn-light"
+            onclick="ToCollection()">作品集</button>
     </div>
 
     <div id="intro" class="intro">
         <div class="content">
             <p> 我是劉子瑜，今年26歲
-                在人資及業務領域有2.5的經驗
-                2023年在程式領域進修半年，學習全端語言
-                期望可以在資訊及科技領域擔任專案管理師
+                在人資及業務領域有2.5年的經驗
+
+                2023年5月在程式領域進修半年，學習全端語言
+                期許軟體的探索能成為我的助力
+                在資訊及科技領域擔任專案管理師
 
                 手機 : 0903-518-317
                 E-mail : skycoy1214@gmail.com
             </p>
-            <button id="close">close</button>
+            <button id="close_intro">close</button>
+        </div>
+    </div>
+
+    <div id="resume" class="resume">
+        <div class="content">
+            <p>To be Continued...</p>
+            <button id="close_resume">close</button>
         </div>
     </div>
 
@@ -102,14 +115,27 @@
             dialog.style.display = 'block';
         });
 
-        document.getElementById('close').addEventListener('click', function () {
+        document.getElementById('close_intro').addEventListener('click', function () {
             var dialog = document.getElementById('intro');
             dialog.style.display = 'none';
         });
 
+        document.getElementById('button_resume').addEventListener('click', function () {
+            var dialog = document.getElementById('resume');
+            dialog.style.display = 'block';
+        });
+
+        document.getElementById('close_resume').addEventListener('click', function () {
+            var dialog = document.getElementById('resume');
+            dialog.style.display = 'none';
+        });
+
+
+
+
         function ToCollection() {
-        window.location.href = "./Collection.html";
-    }
+            window.location.href = "./Collection.html";
+        }
 
     </script>
 
