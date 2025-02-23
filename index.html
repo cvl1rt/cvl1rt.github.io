@@ -57,17 +57,16 @@
             border-radius: 5%;
         }
 
-        #close {
+        #close_intro {
             position: absolute;
             bottom: 20px;
             right: 20px;
             cursor: pointer;
-            border-radius: 20%;
+            border-radius: 10px;
         }
 
-        #resume {
-            display: none;
-        }
+
+
     </style>
 
 
@@ -79,20 +78,23 @@
         <img src="codegrandma.jpg" alt="Your Image">
     </div>
     <div class="buttons">
-        <button type="button" id="button_aboutme" class="btn btn-light">關於我</button>
-        <button type="button_resume" id="button_resume" class="btn btn-light">履歷</button>
+        <button type="button_aboutme" id="button_aboutme" class="btn btn-light">關於我</button>
+        <button type="button_104" id="button_104" class="btn btn-light" onclick="window.location.href='https://pda.104.com.tw/profile/preview?vno=75e7mia0k'">to 104</button>
         <button type="button_collection" id="button_collection" class="btn btn-light"
             onclick="ToCollection()">作品集</button>
     </div>
 
     <div id="intro" class="intro">
         <div class="content">
-            <p> 我是劉子瑜，今年26歲
-                在人資及業務領域有2.5年的經驗
+            <p> 我是劉子瑜，今年28歲
+                
+                1年+ 軟體專案管理經驗
 
-                2023年5月在程式領域進修半年，學習全端語言
-                期許軟體的探索能成為我的助力
-                在資訊及科技領域擔任專案管理師
+                6個月軟體工程專業培訓
+                HTML｜CSS｜JavaScript｜Vue｜jQuery｜Bootstap         
+                C#｜ASP.NET MVC｜ASP.NET Core
+
+                2.5年+ 人資及業務經驗
 
                 手機 : 0903-518-317
                 E-mail : skycoy1214@gmail.com
@@ -100,14 +102,6 @@
             <button id="close_intro">close</button>
         </div>
     </div>
-
-    <div id="resume" class="resume">
-        <div class="content">
-            <p>To be Continued...</p>
-            <button id="close_resume">close</button>
-        </div>
-    </div>
-
 
     <script>
         document.getElementById('button_aboutme').addEventListener('click', function () {
@@ -119,18 +113,6 @@
             var dialog = document.getElementById('intro');
             dialog.style.display = 'none';
         });
-
-        document.getElementById('button_resume').addEventListener('click', function () {
-            var dialog = document.getElementById('resume');
-            dialog.style.display = 'block';
-        });
-
-        document.getElementById('close_resume').addEventListener('click', function () {
-            var dialog = document.getElementById('resume');
-            dialog.style.display = 'none';
-        });
-
-
 
 
         function ToCollection() {

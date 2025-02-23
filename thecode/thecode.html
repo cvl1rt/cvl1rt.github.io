@@ -69,7 +69,7 @@
     </div>
     <script>
         //宣告
-        let randow = 0
+        let random = 0
         let min = 1
         let max = 100
         //Dom
@@ -80,7 +80,7 @@
         const reset = document.querySelector('.reset')
         const input = document.querySelector('.input')
         //方法
-        function getrandow() {
+        function getrandom() {
             return Math.floor(Math.random() * (100 - 1) + 1);
         }
         function confirmBtn() {
@@ -88,13 +88,13 @@
             let output = input.value
             if (output < min || output > max)
                 return alert('不再範圍內')
-            if (output > randow) {
+            if (output > random) {
                 max = output
             }
-            else if (output < randow) {
+            else if (output < random) {
                 min = output
             }
-            else if (output == randow) {
+            else if (output == random) {
                 win = true
             }
             isWin(win)
@@ -109,8 +109,8 @@
         }
         //window.onload
         window.onload = function () {
-            randow = getrandow()
-            console.dir(randow)
+            random = getrandom()
+            console.dir(random)
 
             reset.onclick = function () {
                 window.location.reload()

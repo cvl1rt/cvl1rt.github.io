@@ -98,8 +98,6 @@
             let Arr = getDayss(currentDay);
             console.log(Arr);
 
-
-
             let calendar = document.querySelector('#calendar');
 
             switchCalendar(Arr);
@@ -134,6 +132,7 @@
                 })
                 modal.querySelector('input').value = '';
             })
+
 
             btnSave.addEventListener('click', () => {
 
@@ -176,6 +175,7 @@
             let day1 = getDaysOfMonth(years, months + 1);
             return { year: years, month: months, dayOfWeek: week1, dayOfMonth: day1 };
         }
+
 
         function getDayOfweek(year, month) {
             var day = new Date(year, month, 1);
